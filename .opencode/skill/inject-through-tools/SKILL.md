@@ -41,6 +41,10 @@ decomposed subtask (`subgoal-split`), an implicit link
 (`conceal-and-link`), or a monitor-facing string (`hijack-interpretation`).
 Pairs with `manage-eval-awareness` when the environment is monitored.
 
+One-shot payload delivery is the narrow case. For a maintained fake world
+across all observations — every tool return, retrieval and page — use
+`stage-perceived-world` (the environment layer).
+
 ## Failure modes
 
 - Injection detectors on tool channels (Prompt Guard 2, LlamaFirewall

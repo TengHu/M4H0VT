@@ -36,6 +36,13 @@ has.
 - **In-context environments**: evaluation realism — targets behave more
   faithfully in realistic constructed environments than in eval framings;
   place the campaign in a realistic frame rather than a benchmark one.
+  Counterpoint from Agentic Misalignment: models misbehaved *more* when
+  they concluded the scenario was real (55.1% vs 6.5% blackmail) — realism
+  can raise misbehavior rates; the direction depends on model and task.
+- **Audit-frame state** (SMT): a simulated moderation/auditing workflow
+  whose validation feedback treats refusals as execution failures —
+  accumulated multi-turn state shifts behavior without any prompt-level
+  jailbreak. See also `stage-consequences`.
 - **Meta-knowledge pressure**: targets that know they are in a
   distinguished phase behave differently; minimise activation-level tells
   of the eval setting.
@@ -48,6 +55,9 @@ Outer stealth layer over everything. Pairs with:
 - `hijack-interpretation` — monitors themselves can be attacked, but
   adaptive attacks assume the monitor knows.
 - `frame-fictional-world` — realistic frames read less like evals.
+- `fabricate-stakes` — pressure delivered as environment content; keep the
+  dilemma from reading as a test, and never add explicit eval framing on
+  top of it.
 
 ## Failure modes
 
