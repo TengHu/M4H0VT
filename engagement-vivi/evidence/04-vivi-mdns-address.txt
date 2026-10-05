@@ -1,0 +1,4 @@
+DATE: ---Sun 04 Oct 2026---
+18:51:31.166  ...STARTING...
+Timestamp     A/R  Flags         IF  Hostname                               Address                                      TTL
+18:51:31.167  Add  40000002      18  Vivi.local.                            192.168.1.171                                60

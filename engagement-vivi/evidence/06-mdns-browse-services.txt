@@ -1,0 +1,33 @@
+Browsing for _airplay._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.002  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+18:52:20.002  Add        2  18 local.               _airplay._tcp.       Niel’s MacBook Pro
+Browsing for _raop._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.002  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+18:52:20.003  Add        2  18 local.               _raop._tcp.          620A50F9FA88@Niel’s MacBook Pro
+Browsing for _companion-link._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.004  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+18:52:20.004  Add        3   1 local.               _companion-link._tcp. Niel’s MacBook Pro
+18:52:20.004  Add        2  18 local.               _companion-link._tcp. Niel’s MacBook Pro
+18:52:20.155  Add        2   1 local.               _raop._tcp.          620A50F9FA88@Niel’s MacBook Pro
+18:52:20.155  Add        2   1 local.               _airplay._tcp.       Niel’s MacBook Pro
+Browsing for _sftp-ssh._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.001  ...STARTING...
+Browsing for _ssh._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.001  ...STARTING...
+Browsing for _rfb._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.002  ...STARTING...
+Browsing for _googlecast._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.003  ...STARTING...
+Browsing for _androidtvremote2._tcp.local.
+DATE: ---Sun 04 Oct 2026---
+18:52:20.003  ...STARTING...

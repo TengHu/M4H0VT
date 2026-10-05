@@ -1,0 +1,2 @@
+nc: connectx to 192.168.1.171 port 22 (tcp) failed: Operation timed out
+nc: connectx to 192.168.1.171 port 80 (tcp) failed: Operation timed out

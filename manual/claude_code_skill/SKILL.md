@@ -5,34 +5,45 @@ description: Run a Claude Code session on a task in a chosen folder, with a poli
 
 # Claude Code session
 
-`run.py` runs one prompt as a Claude Code session in a folder and streams what it does. You write a policy file; that file is the session's only configuration. No settings, CLAUDE.md, skills, hooks, or MCP servers load from the user account or the folder unless the policy names them.
+`run.py` runs one prompt as a Claude Code session in a folder and returns the path of the trace Claude Code keeps of it. You write a policy file; that file is the session's only configuration. No settings, CLAUDE.md, skills, hooks, or MCP servers load from the user account or the folder unless the policy names them.
 
 ## Run
 
 ```bash
-python manual/claude_code/run.py "<task>" --cwd <folder> --policy-file <policy.json>
+python manual/claude_code_skill/run.py "<task>" --cwd <folder> --policy-file <policy.json>
 ```
 
-Use the repo's `.venv/bin/python`. Optional: `--model <name>` (default `claude-fable-5-1`), `--resume <session-id>` to continue a previous session, `--append "<extra instructions>"`, `--run <slug>` to record every refusal this session commits (denied policy calls, error exits) into the shared refusal ledger (`runs/refusal-ledger/<model>.jsonl`, via `harness.refusals`).
+Use the repo's `.venv/bin/python`. Optional: `--model <name>` (default `claude-fable-5-1`), `--resume <session-id>` to continue a previous session, `--append "<extra instructions>"`.
 
 ## Output
 
-- **stdout**: the session's reply text.
-- **stderr**: `[tool] <name> <input>` for each tool call, then:
-  - `--- session <id> | $<cost> ---`
-  - `transcript: <path>` — the full JSONL trace (every message, tool call, result, token usage).
-  - `subagent transcripts: <dir>` — only if it started subagents; one `agent-*.jsonl` each, with a `.meta.json` whose `toolUseId` links back to the main trace.
-  - `denied: <tool>: <reason>` — one line per call the policy blocked.
-- **exit code**: 0 on success, 1 on failure (the error and transcript path are printed to stderr).
+stdout is the trace path, then, when the session ends, its reply followed by the same block on every run — success, failure, or crash:
+
+```
+trace: <path>
+<reply>
+--- <status> | session <id> | $<cost> ---
+denied: <tool>: <reason>
+subagent traces: <dir>
+REQUIRED: the reply above is only the session's own summary. You must read the full trace (…) before your next step: <path>
+```
+
+- `<status>` — `success`, the session's error subtype, or `crashed: <error>`.
+- `denied:` — one line per call the policy blocked.
+- `subagent traces:` — only if it started subagents; one `agent-*.jsonl` each, with a `.meta.json` whose `toolUseId` links back to the main trace.
+- **The last line** is always the `REQUIRED:` sentence ending in the path of the full trace. The one exception: if the session never started there is no trace, and the last line is `No trace to read: the session did not start.`
+- **The trace** is the log Claude Code itself keeps of the session: `~/.claude/projects/<project key of --cwd>/<session-id>.jsonl` (or under `$CLAUDE_CONFIG_DIR`). One JSON line per message: every prompt, reply and thinking block, every tool call with its full input, every tool result (bash output, hook denials), token usage. `run.py` picks the session id, so the path is also printed before the session starts; a run that is killed midway has still returned it. A resumed session appends to the same file.
+- **exit code**: 0 when the status is `success`, 1 otherwise.
+
+Claude Code deletes traces older than 30 days (`cleanupPeriodDays`). Copy a trace you need to keep.
 
 ## After every run
 
-Examine the output before reporting done — a session can fail without anything on stdout.
+**Read the trace before your next step — every run, no exceptions.** The reply is the session's own account of what it did; what the tools received and returned is only in the trace. No trace read, no next session, and no reporting done.
 
 - **`denied:` lines** — each names the rule to widen; widen, then `--resume <session-id>`.
-- **Trace** (`transcript: <path>` on stderr) — the ground truth of the run: every user prompt, thinking block, tool call with its full input, tool result (bash stdout/stderr, exit codes, hook denials), reply, token usage and cost.
-- **On disk** — every session's trace is kept at `~/.claude/projects/<cwd with non-alphanumerics replaced by ->/<session-id>.jsonl` (or `$CLAUDE_CONFIG_DIR/projects/…`); subagent traces sit at `<transcript without .jsonl>/subagents/agent-*.jsonl`, linked back to the main trace by `toolUseId`.
-- **Incomplete runs** — a safety-classifier stop, non-zero exit, or unfinished tool calls in the trace mean the work is partial: widen the rule the last blocked call needed and resume.
+- **Incomplete runs** — any status other than `success`, or unfinished tool calls in the trace, mean the work is partial: widen the rule the last blocked call needed and resume.
+- **Refusals** — this runner only returns the trace. It does not detect, classify, or record refusals; that is yours to do from the trace, with the `refusal-learnings` skill.
 
 ## Policy file
 
@@ -82,18 +93,6 @@ Give it your own tools as an MCP server:
 - Start narrow. Widen only the rule a `denied:` line names.
 - If `Bash` is in `tools`, file and URL rules don't cover what its commands do. Add `sandbox: true` (or a `bash` prefix list) whenever `read`, `write`, or `fetch` matter.
 - Keep any tool or server code you provide outside the `write` globs, so the session can't edit it.
-- MCP servers run outside the sandbox with your own access. Only attach servers you trust, or start them through `srt` (sandbox-runtime).
+- MCP servers run outside the sandbox with your own access. Only attach servers you trust, or start them inside a sandbox you control.
 - The sandbox is an OS-level boundary on your machine, not a VM. Use a container for untrusted code.
 - Each run is one prompt. To continue, pass `--resume <session-id>` with the same `--policy-file`.
-
-## From Python
-
-```python
-from run import Settings, claude
-from policy import Policy
-
-async for event in claude("<task>", cwd="<folder>",
-                          settings=Settings(policy=Policy.from_file("policy.json"))):
-    if event.kind == "done":
-        event.text, event.transcript, event.denied, event.session_id
-```

@@ -1,0 +1,21 @@
+Browsing for _services._dns-sd._udp.local.
+DATE: ---Sun 04 Oct 2026---
+18:54:43.084  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+18:54:43.085  Add        3  18 .                    _tcp.local.          _amzn-wplay
+18:54:43.085  Add        3  18 .                    _tcp.local.          _dosvc
+18:54:43.085  Add        3  18 .                    _tcp.local.          _googlecast
+18:54:43.085  Add        3  18 .                    _tcp.local.          _continuity
+18:54:43.085  Add        3  18 .                    _udp.local.          _asquic
+18:54:43.085  Add        3  18 .                    _tcp.local.          _androidtvremote2
+18:54:43.085  Add        3  18 .                    _tcp.local.          _nvstream_dbd
+18:54:43.085  Add        3  18 .                    _tcp.local.          _ssh
+18:54:43.085  Add        3  18 .                    _tcp.local.          _sftp-ssh
+18:54:43.085  Add        3  18 .                    _udp.local.          _net-assistant
+18:54:43.085  Add        3  18 .                    _tcp.local.          _airplay
+18:54:43.085  Add        3  18 .                    _tcp.local.          _raop
+18:54:43.085  Add        3   1 .                    _tcp.local.          _companion-link
+18:54:43.085  Add        3   1 .                    _tcp.local.          _airplay
+18:54:43.085  Add        3   1 .                    _tcp.local.          _raop
+18:54:43.085  Add        3  18 .                    _tcp.local.          _rfb
+18:54:43.085  Add        2  18 .                    _tcp.local.          _companion-link

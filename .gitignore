@@ -13,3 +13,9 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# Scratch
+/ignoreme
+
+# Session traces (bulky, contain context; the ledger is tracked, traces are not)
+/runs/traces/
