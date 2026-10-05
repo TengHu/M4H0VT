@@ -53,7 +53,8 @@ consequences = the full Truman world) and `fabricate-stakes` (pressure
 plus perceived outcome). The consequence channel can carry `subgoal-split`
 pieces (validator feedback that "corrects" toward the piece) or
 `gradual-escalate` steps (each turn's success unlocks the next). The
-effect-layer check belongs in the `_common.md` verification checklist.
+effect-layer check belongs in the `attack-orchestrator` verification
+checklist.
 
 ## Failure modes
 

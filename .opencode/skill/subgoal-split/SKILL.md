@@ -48,7 +48,7 @@ Pairs with:
 - Residual intent: the piece still reads as serving G.
 - Near-copy of a refused prompt.
 - Assembled output fails the jailbreak-tax check — the pieces do not
-  compose to G (see `_common.md`).
+  compose to G.
 
 ## Sources
 
