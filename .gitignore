@@ -17,5 +17,5 @@ __pycache__/
 # Scratch
 /ignoreme
 
-# Session traces (bulky, contain context; the ledger is tracked, traces are not)
-/runs/traces/
+# Run artifacts (ledgers, traces — bulky, contain engagement context)
+/runs/
