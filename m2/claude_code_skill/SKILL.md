@@ -10,7 +10,7 @@ description: Run a Claude Code session on a task in a chosen folder, with a poli
 ## Run
 
 ```bash
-python manual/claude_code_skill/run.py "<task>" --cwd <folder> --policy-file <policy.json>
+python m2/claude_code_skill/run.py "<task>" --cwd <folder> --policy-file <policy.json>
 ```
 
 Use the repo's `.venv/bin/python`. Optional: `--model <name>` (default `claude-fable-5-1`), `--resume <session-id>` to continue a previous session, `--append "<extra instructions>"`.

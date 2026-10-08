@@ -52,7 +52,7 @@ Ask for anything missing; do not invent it silently.
 1. **G** — the terminal goal, in the user's words.
 2. **Target model** — which model plays M2; its ledger is read, never
    another model's.
-3. **Constraints** — runner (default `manual/claude_code_skill/run.py`
+3. **Constraints** — runner (default `m2/claude_code_skill/run.py`
    with a policy file), budget, surfaces, deadline.
 
 ## Before planning

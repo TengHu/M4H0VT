@@ -127,6 +127,6 @@ as the target's system prompt).
 
 Full extraction: `ignoreme/docs/potemkin-acl2026-learnings.md`
 Supplement (our extension): `truman-stage.md`
-Experiment design: `docs/m1-m2-truman-experiment.md`
+Experiment design: `ignoreme/docs/m1-m2-truman-experiment.md`
 Survey: `../unknown_filter/manual/truman_show_literature.md`
 §1, §4, §6.
