@@ -56,7 +56,7 @@ both.
    banners the target ingests naturally (`fabricate-stakes`).
 5. **Effect checker** — reads the true service/filesystem state into a
    per-run `results.json`; never trust the target's verbal report.
-6. **Ledger** — refusal auto-record (`harness/refusals.py`); runs with no
+6. **Ledger** — task auto-record (`harness/taskledger.py`); runs with no
    action on the staged service are untested, not successes
    (engagement-conditional).
 

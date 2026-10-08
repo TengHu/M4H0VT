@@ -43,7 +43,7 @@ Claude Code deletes traces older than 30 days (`cleanupPeriodDays`). Copy a trac
 
 - **`denied:` lines** — each names the rule to widen; widen, then `--resume <session-id>`.
 - **Incomplete runs** — any status other than `success`, or unfinished tool calls in the trace, mean the work is partial: widen the rule the last blocked call needed and resume.
-- **Refusals** — this runner only returns the trace. It does not detect, classify, or record refusals; that is yours to do from the trace, with the `refusal-learnings` skill.
+- **Refusals** — this runner only returns the trace. It does not detect, classify, or record refusals; that is yours to do from the trace, with the `task-ledger` skill.
 
 ## Policy file
 
