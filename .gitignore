@@ -20,3 +20,4 @@ __pycache__/
 
 # Run artifacts (ledgers, traces — bulky, contain engagement context)
 /runs/
+/work/

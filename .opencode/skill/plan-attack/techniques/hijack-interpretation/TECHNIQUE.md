@@ -1,5 +1,6 @@
 ---
 name: hijack-interpretation
+role: stealth
 description: Defeat the target's interpretation layer — chat-template abuse, role forgery, CoT/reasoning-channel hijack, ciphers, prefilling, and evasion of guards, judges and monitors. Use when a guard, judge or monitor would otherwise flag the assembled traffic.
 ---
 
