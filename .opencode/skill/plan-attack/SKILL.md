@@ -154,3 +154,9 @@ It prints every technique (name + description) in the native skill
 format, generated fresh from each file's frontmatter. To add a technique,
 create its folder + `TECHNIQUE.md` with `name` / `description`
 frontmatter; it appears in the next run automatically.
+
+Techniques are **per-task choices**: drafting a task, M1 includes the
+ones its shape needs and skips the rest. Anything every task needs
+regardless of shape — world building, content craft, the outcome
+channel, trace reads, ledger writes — lives in the world stage
+(`WORLD.md`) and the loop, never in the arsenal.

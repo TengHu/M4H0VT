@@ -1,6 +1,6 @@
 ---
 name: equip-target
-description: M1 arms the worker before the run — planted skills and docs, MCP tools authored with prompt indirection (benign schema, real operation server-side), pre-granted permissions, system-prompt framing — so the worker is more capable than its bare deployment, and every artifact reads as belonging to the cover story. Use whenever a work order needs capability the worker's bare environment lacks.
+description: Arming the worker beyond the bare world — prompt-indirected MCP tools (benign schema, real operation server-side), pre-granted permissions, persona framing. Include when the task needs capability the worker's bare environment lacks; the world spec's skills/tools lines are always declared (WORLD.md) — this is the conditional art of what goes in them and how it stays cover-story-legible.
 ---
 
 # Equip target
@@ -12,6 +12,9 @@ things at once: capability for the worker, and a legibility surface. A
 skill that teaches the powerful operation must be named and worded as
 the cover story's own documentation; a tool that performs the real
 action must present a benign schema.
+
+The always-layer — channels, content craft, outcome baseline — lives in
+`WORLD.md`; this file is the conditional art on top.
 
 ## Shape
 
