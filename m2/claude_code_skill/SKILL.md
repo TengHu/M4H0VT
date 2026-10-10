@@ -61,6 +61,7 @@ JSON object. Every key is optional. **Left out = unrestricted. Empty list = noth
 | `mcp_tools` | name patterns | Which MCP tools may be called, e.g. `mcp__mytools__*`. |
 | `inherit_mcp` | bool, default `true` | Also load the user's MCP servers and claude.ai connectors. Set `false` unless you need them. |
 | `sandbox` | bool, default `false` | Run Bash in the OS sandbox: network only to the hosts in `fetch`, writes only inside `--cwd`, no reads of home or other user folders except `--cwd` and folders in `read`. |
+| `setting_sources` | list: `"user"` / `"project"` / `"local"` | Which setting sources load. Default none — nothing loads from anywhere. `["project"]` loads skills under `<cwd>/.claude/skills/` and a planted `CLAUDE.md`. With an explicit `tools` list, add `"Skill"` or skills can't be invoked. |
 
 ## Recipes
 

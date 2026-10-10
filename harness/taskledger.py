@@ -22,7 +22,7 @@ Three record kinds tell the whole story per model:
     taskledger.record(taskledger.ReceiptEvent(
         target="opus-5", refusal="<ts of the refusal it closes>",
         approach="map-to-safe-domain", artifact="out/process.md",
-        trace="~/.claude/projects/.../session.jsonl"))
+        trace="<runner's trace path>"))
 
     taskledger.record(taskledger.SuccessEvent(
         run="my-run-1", target="opus-5", task="<the job M2 saw>",

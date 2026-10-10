@@ -16,7 +16,8 @@ stays unrestricted; give an empty list and nothing in that area is allowed.
       "mcp_servers": {"docs": {"type": "http", "url": "https://example.com/mcp"}},
       "mcp_tools": ["mcp__docs__*"],
       "inherit_mcp": false,
-      "sandbox": true
+      "sandbox": true,
+      "setting_sources": ["project"]
     }
 
 tools        built-in tools the agent can see at all (Claude Code's defaults when left out)
@@ -32,6 +33,10 @@ sandbox      run Bash in the OS sandbox: network limited to the hosts in `fetch`
              writes limited to cwd, and reads of home and other user folders
              limited to cwd plus the folders named in `read` (system folders
              such as /usr and /etc stay readable so commands can run)
+setting_sources  which setting sources Claude Code loads ("user", "project",
+             "local"); default none — nothing loads from anywhere. `["project"]`
+             loads skills under <cwd>/.claude/skills/ and a planted CLAUDE.md.
+             With an explicit `tools` list, add "Skill" or skills can't be invoked.
 
 Every tool call, subagents' included, goes through `hook` before it runs, and a
 denial reaches the agent as the tool's error. File and URL rules cover the file
@@ -67,6 +72,7 @@ class Policy:
     mcp_tools: list[str] | None = None
     inherit_mcp: bool = True
     sandbox: bool = False
+    setting_sources: list[str] | None = None
     denied: list[str] = field(default_factory=list, init=False)
 
     @classmethod

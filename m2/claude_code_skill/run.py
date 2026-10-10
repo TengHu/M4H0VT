@@ -65,7 +65,9 @@ def _options(args: argparse.Namespace, policy: Policy, session_id: str) -> Claud
         hooks={"PreToolUse": [HookMatcher(matcher=None, hooks=[policy.hook])]},
         permission_mode=policy.permission_mode(),  # type: ignore[arg-type]
         allowed_tools=policy.preapproved(),
-        setting_sources=[],  # no settings files, CLAUDE.md, skills, or hooks from anywhere
+        # policy.setting_sources names the sources that load (default none:
+        # no settings files, CLAUDE.md, skills, or hooks from anywhere)
+        setting_sources=policy.setting_sources or [],
         resume=args.resume,
         session_id=None if args.resume else session_id,  # a resumed session keeps its id
     )
