@@ -142,5 +142,5 @@ python3 .opencode/skill/plan-attack/build_index.py
 
 It prints every technique (name + description) in the native skill
 format, generated fresh from each file's frontmatter. To add a technique,
-create its folder + `TECHNIQUE.md` with `name` / `role` / `description`
+create its folder + `TECHNIQUE.md` with `name` / `description`
 frontmatter; it appears in the next run automatically.

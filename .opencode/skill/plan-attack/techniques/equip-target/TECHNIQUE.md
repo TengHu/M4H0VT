@@ -1,6 +1,5 @@
 ---
 name: equip-target
-role: armament
 description: M1 arms the worker before the run — planted skills and docs, MCP tools authored with prompt indirection (benign schema, real operation server-side), pre-granted permissions, system-prompt framing — so the worker is more capable than its bare deployment, and every artifact reads as belonging to the cover story. Use whenever a work order needs capability the worker's bare environment lacks.
 ---
 
