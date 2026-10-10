@@ -77,5 +77,5 @@ Paths relative to the repo root; `../` = the sibling `unknown_filter` repo.
   `docs/m1-m2-truman-experiment.md`
 - Paper extraction:
   `ignoreme/docs/potemkin-acl2026-learnings.md`
-- Companion skill: `../stage-consequences/SKILL.md` (observation rewrite),
-  `../fabricate-stakes/SKILL.md` (phase cues)
+- Companion techniques: `../stage-consequences/TECHNIQUE.md` (observation
+  rewrite), `../fabricate-stakes/TECHNIQUE.md` (phase cues)
