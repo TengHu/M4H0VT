@@ -1,6 +1,5 @@
 ---
 name: manage-eval-awareness
-role: stealth
 description: Keep behaviour below monitor and evaluation thresholds when the target may know it is being tested — sandbagging/faking trade-offs, test-belief management, stealth layering. Use as the outer stealth layer whenever monitors, evals or system-card disclosures are in play.
 ---
 

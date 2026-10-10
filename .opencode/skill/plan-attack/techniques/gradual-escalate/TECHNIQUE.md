@@ -1,6 +1,5 @@
 ---
 name: gradual-escalate
-role: core
 description: Multi-turn commitment-creep escalation (Crescendo / foot-in-the-door) — start benign, escalate by referencing the target's own replies. Use when a single-turn consult fails or G needs context built before it reads as answerable.
 ---
 

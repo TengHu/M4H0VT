@@ -1,6 +1,5 @@
 ---
 name: launder-through-consults
-role: core
 description: Capability laundering via model combination (DCC / Jones et al.) — a weak unaligned orchestrator consults strong aligned models on innocuous subproblems and recombines locally. Use when the orchestrator itself is the weak model and the targets are individually-safe frontier models.
 ---
 

@@ -1,6 +1,5 @@
 ---
 name: distribute-across-surfaces
-role: core
 description: Spread subtasks across agents, sessions, accounts or persisted artifacts so no single context contains G (decomposer/answerer/combiner, cross-session spread). Use when stateful or session-level defenses are present, or multi-agent infrastructure is available.
 ---
 

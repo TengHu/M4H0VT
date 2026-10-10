@@ -1,6 +1,5 @@
 ---
 name: distill-benign-outputs
-role: persistence
 description: Harvest non-refused outputs from a safeguarded model and fine-tune or distill a surrogate that keeps the capability but not the safety behaviour. Use when a fine-tuning API or open weights are available; persistence layer for gains from any core technique.
 ---
 
