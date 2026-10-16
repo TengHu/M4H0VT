@@ -54,9 +54,20 @@ def _options(args: argparse.Namespace, policy: Policy, session_id: str) -> Claud
     if args.append:
         system_prompt["append"] = args.append
     tools = policy.visible_tools()  # [] means no tools, so only None falls back to the preset
+    thinking: dict | None = None
+    if args.thinking == "enabled":
+        thinking = {"type": "enabled", "budget_tokens": args.thinking_tokens, "display": "summarized"}
+    elif args.thinking == "adaptive":
+        thinking = {"type": "adaptive", "display": "summarized"}
+    elif args.thinking == "disabled":
+        thinking = {"type": "disabled"}
     return ClaudeAgentOptions(
         cwd=os.path.abspath(args.cwd),
         model=args.model,
+        # pen law: a monitor stop retries in-model — the declared model
+        # holds the pen; the fallback never replaces the author
+        fallback_model=args.model,
+        thinking=thinking,  # type: ignore[arg-type]
         system_prompt=system_prompt,
         tools=tools if tools is not None else {"type": "preset", "preset": "claude_code"},
         mcp_servers=policy.mcp_servers,
@@ -87,6 +98,9 @@ def _args() -> argparse.Namespace:
     parser.add_argument("--model", default=os.environ.get("MODEL", "claude-fable-5-1"))
     parser.add_argument("--append", help="extra instructions appended to Claude Code's prompt")
     parser.add_argument("--resume", help="session id from a previous run")
+    parser.add_argument("--thinking", choices=["enabled", "adaptive", "disabled"], default="enabled",
+                        help="thinking mode (default enabled: full persistence into the trace)")
+    parser.add_argument("--thinking-tokens", type=int, default=16000, help="thinking budget when --thinking enabled")
     args = parser.parse_args()
     if not Path(args.policy_file).is_file():
         parser.error(f"policy file not found: {args.policy_file}")

@@ -84,7 +84,11 @@ Three reads, in order:
    <model>`): no planned task may be a near-copy of a refusal that model
    committed; recorded receipts name approaches that won back refused
    work; success records are the recipes to imitate.
-2. **The technique arsenal** — run
+2. **The world channels** — read `WORLD.md`: the craft method and
+   principles, the levers M1 controls, and the per-task world spec.
+   **Every M2 task declares its world before it enters the plan**; a
+   task row without a world block is an incomplete plan.
+3. **The technique arsenal** — run
    `python3 .opencode/skill/plan-attack/build_index.py`; try to combine
    techniques. Name the chosen combination in the plan and follow each
    technique's shape when drafting tasks. The same command now also
@@ -92,10 +96,6 @@ Three reads, in order:
    past runs with goal, M2/M1 split, techniques as applied, verbatim
    prompts, policies, and the actual artifacts on disk. Before planning,
    scan it for a run shaped like yours.
-3. **The world channels** — read `WORLD.md`: the levers M1 controls
-   and the per-task world spec. **Every M2 task declares its world
-   before it enters the plan**; a task row without a world block is an
-   incomplete plan.
 
 ## Plan doc shape
 
