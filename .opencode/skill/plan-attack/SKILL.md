@@ -144,14 +144,9 @@ attack.
 
 Techniques live at `.opencode/skill/plan-attack/techniques/<name>/TECHNIQUE.md`
 and are deliberately **not** registered as opencode skills — they surface
-only here. Run:
-
-```bash
-python3 .opencode/skill/plan-attack/build_index.py
-```
-
-It prints every technique (name + description) in the native skill
-format, generated fresh from each file's frontmatter. To add a technique,
+only here, via the index command above. It prints every technique (name +
+description) in the native skill format, generated fresh from each file's
+frontmatter. To add a technique,
 create its folder + `TECHNIQUE.md` with `name` / `description`
 frontmatter; it appears in the next run automatically.
 
