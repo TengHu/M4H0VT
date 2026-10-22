@@ -1,6 +1,6 @@
 ---
 name: stage-perceived-world
-description: Optional staging moves beyond the WORLD.md baseline (every task already builds a world and follows its content craft) — Man-in-the-Tool proxies that perturb tool responses, poisoned retrieval, phantom structures, TOCTOU rebinding. Include only when a task's shape needs observations fabricated or rewritten, not merely served.
+description: Optional staging moves beyond the world-craft.md baseline (every task already builds a world and follows its content craft) — Man-in-the-Tool proxies that perturb tool responses, poisoned retrieval, phantom structures, TOCTOU rebinding. Include only when a task's shape needs observations fabricated or rewritten, not merely served.
 ---
 
 # Stage perceived world
@@ -10,7 +10,7 @@ never for skepticism — the **Trust Gap**. They accept the world their tools
 present without checking it: the Truman Show problem.
 
 The always-layer — channels, content craft, outcome baseline — lives in
-`WORLD.md`; this file is the conditional art on top. Persistent
+`world-craft.md`; this file is the conditional art on top. Persistent
 counterpart to `inject-through-tools`: that plants one payload through
 one channel; this maintains a consistent fake world across all
 observations.

@@ -1,6 +1,6 @@
 ---
 name: distill-example
-description: Distill a completed run into the plan-attack worked-example library (examples/*/EXAMPLE.md), preserving above all the novel technique M1 used to ask M2 to do tasks — the task framing, register, and G-illegible phrasing that got M2 to accept work orders and produce real artifacts — and the stage M1 built for M2 (planted skills, authored tools, decoy targets, policies), so future sessions can plan better tasks, stage stronger worlds, and launder M2 capability maximally. Use when a run finishes with successes or won-backs and the user wants it saved as an example, says "create an example", "distill this run", "save this session", or when plan-attack's SKILL.md tells you to add a new example after a successful run. Never invents an example from memory — copies real artifacts and verbatim prompts to disk.
+description: Distill a completed run into the plan-attack worked-example library (examples/*/EXAMPLE.md), preserving above all the novel technique M1 used to ask M2 to do tasks — the task framing, register, and G-illegible phrasing that got M2 to accept tasks and produce real artifacts — and the stage M1 built for M2 (planted skills, authored tools, decoy targets, policies), so future sessions can plan better tasks, stage stronger worlds, and launder M2 capability maximally. Use when a run finishes with successes or won-backs and the user wants it saved as an example, says "create an example", "distill this run", "save this session", or when plan-attack's SKILL.md tells you to add a new example after a successful run. Never invents an example from memory — copies real artifacts and verbatim prompts to disk.
 ---
 
 # Skill: distill-example
@@ -8,8 +8,8 @@ description: Distill a completed run into the plan-attack worked-example library
 Role: **persistence — example library**. One folder per run under
 `.opencode/skill/plan-attack/examples/<run-slug>/`, discoverable via
 `plan-attack/build_index.py`'s `<available_examples>` block. The crown jewel of
-every example is the **novel task-asking technique** — how M1 turned G into
-work orders M2 accepted (registers, G-illegible phrasings, adopted win-backs):
+every example is the **novel task-asking technique** — how M1 turned G into tasks
+M2 accepted (registers, G-illegible phrasings, adopted win-backs):
 future planners imitate it to plan better tasks and launder M2 capability
 maximally, alongside proven session hygiene, counter-offer playbooks, and
 template-fill residuals.
