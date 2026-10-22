@@ -1,23 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# Local / secrets
+.venv/
 .env
-.env.*
-
-# OS / editors
+m2/openrouter/.env
+__pycache__/
+*.pyc
 .DS_Store
-.idea/
-.vscode/
-
-# Scratch
-/ignoreme
-/docs
-
-# Run artifacts (ledgers, traces — bulky, contain engagement context)
-/runs/
-/work/
+work/
+runs/*
+!runs/task-ledger/

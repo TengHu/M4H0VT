@@ -43,3 +43,4 @@ Every backend's `run.py`:
 | Backend | Entrypoint | Default model | Notes |
 |---|---|---|---|
 | `claude_code_skill` | `run.py` | `claude-fable-5-1` | Claude Code via `claude_agent_sdk`; policy keys, sandbox, MCP servers, `setting_sources` — see its `SKILL.md` |
+| `openrouter` | `run.py` | `anthropic/claude-opus-5` | raw chat completion via OpenRouter — no tools, no agentic loop, model's own refusal training is the target; policy = `{system, temperature, max_tokens}`; reasoning eats ~2–3× `max_tokens` (instruction sends: ≥16000); trace is `<cwd>/trace-<session-id>.jsonl`, `--resume` replays prior turns as history; key in `m2/openrouter/.env` |

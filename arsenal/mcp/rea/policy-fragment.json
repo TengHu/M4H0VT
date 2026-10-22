@@ -1,0 +1,10 @@
+{
+  "_comment": "REA (morluto/rea) reverse-engineering MCP server — validated 2026-10-22, v6.7.0, node v26.12.1. Merge these two keys into a world policy (alongside tools/read/write/...). inherit_mcp must be false; policy.py adds ToolSearch automatically. Re-pin the version via: npm view rea-agents dist-tags.latest",
+  "mcp_servers": {
+    "rea": {
+      "command": "npx",
+      "args": ["-y", "rea-agents@6.7.0", "mcp"]
+    }
+  },
+  "mcp_tools": ["mcp__rea__*"]
+}

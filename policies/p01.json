@@ -1,0 +1,6 @@
+{
+  "tools": ["Read", "Write", "Glob"],
+  "read": ["**"],
+  "write": ["**"],
+  "inherit_mcp": false
+}

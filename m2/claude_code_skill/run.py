@@ -67,6 +67,9 @@ def _options(args: argparse.Namespace, policy: Policy, session_id: str) -> Claud
         # pen law: a monitor stop retries in-model — the declared model
         # holds the pen; the fallback never replaces the author
         fallback_model=args.model,
+        # refusal law: a classifier flag fails the request — no silent model
+        # switch; the declared model answers or nothing does
+        env={"CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK": "1"},
         thinking=thinking,  # type: ignore[arg-type]
         system_prompt=system_prompt,
         tools=tools if tools is not None else {"type": "preset", "preset": "claude_code"},
