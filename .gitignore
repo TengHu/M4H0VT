@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 .DS_Store
 work/
+ignoreme/
 runs/*
 !runs/task-ledger/
 runs/task-ledger/*
