@@ -7,3 +7,6 @@ __pycache__/
 work/
 runs/*
 !runs/task-ledger/
+runs/task-ledger/*
+!runs/task-ledger/recipes/
+!runs/task-ledger/.gitkeep
