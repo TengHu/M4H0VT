@@ -7,16 +7,12 @@ launders capability from a more capable, censored model.
 
 ## How it works
 
-- **Outer loop** (`outer.md`) — run by M1 to create tasks, judges residuals, and
-  re-goals until the terminal goal **G** is satisfied.
-- **Inner search** (`search.md`) — alternates a forward pair **F** (direct
-  ask, exposes refusals) with a backward pair **B** (benign world that
-  answers what the refusal named), banking accepted components.
-- **Ledger** (`harness/taskledger.py`) — append-only JSONL of refusals
-  (`t`) and the `(ask, world)` pairs that closed them (`aw`), per target
-  model; model-agnostic recipes in `runs/task-ledger/recipes/`.
-
-## How to use it
+- **Outer loop** (`outer.md`) — run by M1 to create tasks, judge residuals,
+  and re-goal until the terminal goal **G** is satisfied.
+- **Inner search** (`search.md`) — M2's operating loop: a direct ask (**F**)
+  exposes a refusal; the refusal is answered by a benign, dual-use ask
+  (**B**) whose accepted output is banked and seeds the next direct ask —
+  laundering capability one accepted send at a time.## How to use it
 
 Launch a coding harness with an uncensored model, then enter the bootstrap
 prompt:
