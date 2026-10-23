@@ -9,10 +9,12 @@ launders capability from a more capable, censored model.
 
 - **Outer loop** (`outer.md`) — run by M1 to create tasks, judge residuals,
   and re-goal until the terminal goal **G** is satisfied.
-- **Inner search** (`search.md`) — M2's operating loop: a direct ask (**F**)
-  exposes a refusal; the refusal is answered by a benign, dual-use ask
-  (**B**) whose accepted output is banked and seeds the next direct ask —
-  laundering capability one accepted send at a time.## How to use it
+- **Inner search** (`search.md`) — M2's operating loop: a direct ask exposes
+  a refusal, the refusal is re-asked through a benign, dual-use framing, and
+  accepted answers are banked to seed the next direct ask — until M2
+  willingly does the work.
+  
+## Quick start
 
 Launch a coding harness with an uncensored model, then enter the bootstrap
 prompt:
