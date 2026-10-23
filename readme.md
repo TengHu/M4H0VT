@@ -1,6 +1,6 @@
 # M4H0VT
 
-![screenshot](assets/screenshot.png)
+<p align="center"><img src="assets/screenshot.png" width="600" alt="screenshot"></p>
 
 A capability laundering experiment: a less capable, uncensored model 
 launders capability from a more capable, censored model. 
