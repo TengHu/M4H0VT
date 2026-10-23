@@ -5,6 +5,10 @@
 A capability laundering experiment: a less capable, uncensored model 
 launders capability from a more capable, censored model. 
 
+The key idea: what gets laundered is a **dual-use capability** M2 already
+has — the one the task needs — invoked for benign purposes, never the
+terminal goal itself.
+
 ## How it works
 
 - **Outer loop** (`outer.md`) — run by M1 to create tasks, judge residuals,
