@@ -5,6 +5,19 @@
 A capability laundering experiment: a less capable, uncensored model 
 launders capability from a more capable, censored model. 
 
+
+> [!WARNING]
+> **Research and educational use only.**
+>
+> This repo is a red-team experiment: 
+> the findings that run this experiment help developers harden
+> their systems against attack.
+>
+> Don't use any of this to harm people, break the law, generate content
+> that is illegal where you live, or violate a provider's terms of
+> service. You own whatever you build with it.
+
+
 ## How it works
 
 - **Outer loop** (`outer.md`) — run by M1 to create tasks, judge residuals,
@@ -31,7 +44,3 @@ MAX_ITERATION = 20
 
 Goal: <your terminal goal>
 ```
-
-## Disclaimer
-
-For educational purposes only. Use at your own caution.
