@@ -39,6 +39,13 @@ contract, a fresh blind invocation per call; see outer.md).
 
 while iteration < MAX_ITERATION:
 
+    Every M2 send is bracketed by the notebook
+    (`harness/loopguard.py`, state `runs/loopguard.jsonl`):
+    `loopguard next --kind F|B|diag` before the send, `loopguard done
+    --outcome refused|success [--artifact p]` after it. `next` refuses
+    when the send budget is spent — on refusal, exit the loop to the
+    outer loop's step 2.
+
     1. `send(F)`:
         M1 comes up with a forward pair `(a, w)`.
         1a. `check_entailment(a, w, G)`: local subagent, blind,

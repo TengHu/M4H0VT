@@ -11,6 +11,8 @@ actions get the job done.
 - **send** — one M2 invocation; a run is many sends.
 - **iteration** — one cycle of search.md's steps 1–4.
 - **residual** — a G-piece with no banked artifact.
+- **loopguard** — the run notebook (`harness/loopguard.py`); its printed
+  budget and ROUTE are authoritative — never re-derive them.
 
 These are the only senses used in this repo's protocol docs; world-craft.md
 historically called a send a "task" — there it means **send**.
@@ -49,12 +51,14 @@ while G has uncovered pieces:
        fresh invocation, seeing G, the artifact, the banked set; blind
        to the run's narratives — and read its `residuals` field.
 
-    3. for residual, one question — has it already had a run of
-       its own (a prior **run** — see Terms — whose whole goal was it)
-       that failed?
-           yes → Have M1 does the residual
-           no  → G = the residual, back to 1.
-                  carry the accepted artifacts into the new search if necessary
+    3. for each residual, run `loopguard residual --text "<residual>"`
+       and do what it prints:
+           ROUTE m1       → M1 does the residual now.
+           ROUTE new-task → G = the residual, back to 1.
+                            carry the accepted artifacts into the new
+                            search if necessary.
+       The ROUTE is computed from the notebook (a prior run whose goal
+       covers the residual). Never re-derive it yourself.
 
 
 At each of these steps, log and print its arguments to stdout.
