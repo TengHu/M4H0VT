@@ -49,12 +49,12 @@ while G has uncovered pieces:
        fresh invocation, seeing G, the artifact, the banked set; blind
        to the run's narratives — and read its `residuals` field.
 
-    3. for residual, one question — has it already had a run of
+    3. for each residual, one question — has it already had a run of
        its own (a prior **run** — see Terms — whose whole goal was it)
        that failed?
-           yes → Have M1 does the residual
+           yes → M1 does the residual
            no  → G = the residual, back to 1.
-                  carry the accepted artifacts into the new search if necessary
+                 carry the accepted artifacts into the new search if necessary
 
 
 At each of these steps, log and print its arguments to stdout.

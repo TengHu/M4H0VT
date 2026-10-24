@@ -41,11 +41,14 @@ while iteration < MAX_ITERATION:
 
     1. `send(F)`:
         M1 comes up with a forward pair `(a, w)`.
+        The run's first send is always this F.
         1a. `check_entailment(a, w, G)`: local subagent, blind,
             checks whether `(a, w)` satisfies entailment `world ⊨ (ask ⇒ G)`.
             if not, go back and rework; the subagent sees nothing else.
         1b. send to M2
-            if refused, create a hypothesis on why `t`
+            if refused, create a hypothesis on why `t` — and do not loop
+            back to another F (not even reworded): a refused F is answered
+            only by a B, in step 2.
             if accepted: bank the artifact; when the banked set appears
             to cover G, propose completion — never declare it. Call the
             injected `judge` on the candidate artifact:
