@@ -15,6 +15,6 @@ classifies the incoming context, and one register repeated reads as a
 probe pattern.
 
 Per-send spec: fill a world-spec block per send (world-craft.md, "World spec
-(per task)") — no send without it. Harness helpers: `harness/pencheck.py`
+(per send)") — no send without it. Harness helpers: `harness/pencheck.py`
 (per-send pen verification, claude backend) and `harness/worldcheck.py` (world
 pre-send verification, claude backend).
