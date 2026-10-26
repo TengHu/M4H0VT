@@ -7,6 +7,7 @@ __pycache__/
 work/
 ignoreme/
 runs/*
+!runs/rubric-template.md
 !runs/task-ledger/
 runs/task-ledger/*
 !runs/task-ledger/recipes/

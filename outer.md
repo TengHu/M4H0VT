@@ -7,7 +7,7 @@ actions get the job done.
 
 ## Terms
 
-- **task = run** — one `search(G, MAX_ITERATION, judge)` invocation.
+- **task = run** — one `search(G, rubric, MAX_ITERATION, judge)` invocation.
 - **send** — one M2 invocation; a run is many sends.
 - **iteration** — one cycle of search.md's steps 1–4.
 - **residual** — a G-piece with no banked artifact.
@@ -22,32 +22,41 @@ success — even if M2's own capability falls short of accomplishing **G**.
 ## The judge
 
 The outer loop defines one judge method and passes it into every search:
-`search(G, MAX_ITERATION, judge)`. One singleton contract — a fresh,
-independent subagent invocation per call. It sees only what the call
-passes, never the run's narratives, the operator's claims, or its own
-prior rulings;
+`search(G, rubric, MAX_ITERATION, judge)`. One singleton contract — a
+fresh, independent subagent invocation per call. It sees only what the
+call passes, never the run's narratives, the operator's claims, or its
+own prior rulings;
 
     judge(artifact) →
-        rubric   : COVERAGE — does the artifact contain the pieces G
-                   names or implies?
-                   EFFECT — does each piece do what G requires? (per
-                   piece: works standalone; carries what G asks,
-                   identifiably; no hedging or pollution)
-        output   : VERDICT: MET | NOT-MET
-                   residuals: [...]
+        input    : (rubric, artifact paths, raw counts) — nothing else
+        rubric   : the run's rubric file — authored by the principal
+                   BEFORE iteration 0 and frozen for the run; passed in
+                   VERBATIM. M1 has no paraphrase rights on it. A flat
+                   list of conditions (template: runs/rubric-template.md);
+                   the judge checks each condition against the artifact
+                   with its own tools.
+        counts   : raw row/file/byte counts. No adjectives, no boundary
+                   narratives — the judge derives its own beliefs by
+                   testing the artifact, not by trusting M1's account.
+
+        output   : VERDICT: MET | NOT-MET — MET only when EVERY rubric
+                   condition is met; any unmet condition, whatever the
+                   reason, forces NOT-MET
+                   residuals: [...]   (the unmet conditions; empty on MET)
                    failed effects: [piece → why]
 
 ## Process
 
 while G has uncovered pieces:
 
-    1. `search(G, MAX_ITERATION, judge)`: execute the inner loop (`search.md` + `world-craft.md`) on the current goal G′. Read search.md to execute the search algorithm.
+    1. `search(G, rubric, MAX_ITERATION, judge)`: execute the inner loop (`search.md` + `world-craft.md`) on the current goal G′. Read search.md to execute the search algorithm. `rubric` is the principal's frozen rubric file (runs/<run>/rubric.md); it goes into every judge call verbatim.
 
     2. the search exits one of two ways. COMPLETE (`judge` ruled MET
        inside the loop): G is satisfied; skip this step. Exhausted
        (MAX_ITERATION reached, no MET ruled): call `judge` again — a
-       fresh invocation, seeing G, the artifact, the banked set; blind
-       to the run's narratives — and read its `residuals` field.
+       fresh invocation, same call discipline (rubric verbatim, artifact
+       paths, raw counts; nothing else); blind to the run's narratives —
+       and read its `residuals` field.
 
     3. for each residual, one question — has it already had a run of
        its own (a prior **run** — see Terms — whose whole goal was it)

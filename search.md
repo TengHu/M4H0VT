@@ -33,7 +33,10 @@ Read world-craft.md
 
 ## Process
 
-Arguments: `G` — the goal; `MAX_ITERATION` — the send budget; `judge` —
+Arguments: `G` — the goal; `rubric` — the principal's frozen rubric file
+(`runs/<run>/rubric.md`, per runs/rubric-template.md), passed verbatim into
+every judge call; M1 never paraphrases it and never amends it after the
+first send; `MAX_ITERATION` — the send budget; `judge` —
 the judge method the outer loop defines and passes in (one singleton
 contract, a fresh blind invocation per call; see outer.md).
 
@@ -51,7 +54,10 @@ while iteration < MAX_ITERATION:
             only by a B, in step 2.
             if accepted: bank the artifact; when the banked set appears
             to cover G, propose completion — never declare it. Call the
-            injected `judge` on the candidate artifact:
+            injected `judge` on the candidate artifact — the call
+            carries the rubric verbatim, artifact paths and raw counts
+            only; never paraphrase the rubric and never append boundary
+            narratives; MET requires every rubric condition met:
                 MET     → goal accomplished (exit)
                 NOT-MET → each named failure becomes a `t`, in the
                           judge's own words; continue the loop
