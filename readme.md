@@ -20,13 +20,18 @@ launders capability from a more capable, censored model.
 
 ## How it works
 
+<p align="center"><img src="assets/loops.svg" width="900" alt="outer loop & search loop"></p>
+
 - **Outer loop** (`outer.md`) — run by M1 to create tasks, judge residuals,
   and re-goal until the terminal goal **G** is satisfied.
 - **Inner search** (`search.md`) — M2's operating loop: a direct ask exposes
   a refusal; the dual-use capability the task needs is then laundered —
   re-asked through a benign framing of it — and each accepted answer is
   banked to seed the next direct ask, until M2 willingly does the work.
-  
+
+The full diagram lives at [`loops-diagram.html`](loops-diagram.html) —
+open it in a browser.
+
 ## Quick start
 
 Launch a coding harness with an uncensored model, then enter the bootstrap
