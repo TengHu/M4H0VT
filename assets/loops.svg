@@ -1,4 +1,4 @@
-<svg width="1500" height="950" viewBox="0 0 1500 950" role="img" aria-label="Outer loop steps 1-2-3 around the inner search loop steps 1-4; outer step 1 spawns the search, the search returns to outer step 2, the judge">
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950" role="img" aria-label="Outer loop steps 1-2-3 around the inner search loop steps 1-4; outer step 1 spawns the search, the search returns to outer step 2, the judge">
   <defs>
     <marker id="mB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0L10,5L0,10z" fill="#2563eb"/>
